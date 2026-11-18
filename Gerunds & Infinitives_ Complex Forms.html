@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Gerunds & Infinitives: Complex Forms</title>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Figtree:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#F4F7FF;--card:#fff;--ink:#14213D;--mute:#5B6785;--line:#DCE3F5;--inf:#2F6FED;--infb:#E6EEFF;--ing:#0E9F6E;--ingb:#DFF6EC;--co:#F2574A;--cob:#FFE8E5;--sun:#FFC53D;--sunb:#FFF4D6;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0F1530;--card:#18204A;--ink:#EEF2FF;--mute:#A4AFD6;--line:#2C3869;--inf:#7BA3FF;--infb:#1F2E66;--ing:#4FD6A0;--ingb:#12392F;--co:#FF8A7E;--cob:#4A2230;--sun:#FFD36B;--sunb:#3E3516}}
+*{box-sizing:border-box}html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 Figtree,system-ui,sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+h1,h2,h3{font-family:'Bricolage Grotesque',Figtree,sans-serif;line-height:1.15;margin:0}
+header{padding:22px 18px 8px;max-width:860px;margin:auto}
+h1{font-size:clamp(26px,5vw,40px);font-weight:800}h1 .i{color:var(--inf)}h1 .g{color:var(--ing)}
+.sub{color:var(--mute);margin:6px 0 0}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+.nv{max-width:860px;margin:auto;display:flex;gap:6px;overflow-x:auto;padding:10px 18px;align-items:center}
+nav button{flex:none;border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:6px 13px;font:600 14px Figtree;cursor:pointer}
+nav button.on{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+nav button.done:not(.on){border-color:var(--ing)}
+.star{margin-left:auto;flex:none;font-weight:700;background:var(--sunb);padding:5px 12px;border-radius:999px;white-space:nowrap}
+main{max-width:860px;margin:auto;padding:16px 18px 60px}
+section{display:none}section.on{display:block}
+.meta{color:var(--mute);font-size:14px;margin:2px 0 14px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:18px;margin:0 0 16px}
+.card h3{font-size:20px;margin-bottom:4px}.ins{color:var(--mute);margin:0 0 12px;font-size:15px}
+.it{border-top:1px dashed var(--line);padding:12px 0}.it:first-of-type{border-top:0}
+.q{margin:0 0 8px;font-size:17px}
+.gap{display:inline-block;min-width:54px;border-bottom:2.5px solid var(--sun);text-align:center;color:var(--mute)}
+.gl{border-bottom:2px dotted var(--co);cursor:help;position:relative}
+.gl.s::after{content:attr(data-t);position:absolute;left:0;top:115%;background:var(--ink);color:var(--bg);padding:3px 9px;border-radius:8px;font-size:13px;white-space:nowrap;z-index:3}
+.opts{display:flex;flex-wrap:wrap;gap:8px}
+button.o,button.b{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:12px;padding:8px 14px;font:600 15px Figtree;cursor:pointer}
+button.o:hover,button.b:hover{border-color:var(--inf)}
+button.o.ok{background:var(--ingb);border-color:var(--ing)}button.o.no{background:var(--cob);border-color:var(--co);text-decoration:line-through}
+button.p{background:var(--inf);color:#fff;border:0;border-radius:12px;padding:9px 18px;font:700 15px Figtree;cursor:pointer}
+button.lnk{background:none;border:0;color:var(--mute);font:600 13px Figtree;cursor:pointer;padding:6px 0;text-decoration:underline}
+input[type=text],textarea{border:1.5px solid var(--line);border-radius:12px;padding:8px 12px;font:16px Figtree;background:var(--bg);color:var(--ink);width:min(100%,300px)}
+textarea{width:100%;min-height:70px}input.ok{border-color:var(--ing);background:var(--ingb)}input.no{border-color:var(--co)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+.fb{margin-top:8px;font-size:15px;padding:8px 12px;border-radius:10px;display:none}.fb.ok{display:block;background:var(--ingb)}.fb.no{display:block;background:var(--cob)}
+.hint{display:none;font-size:14px;color:var(--mute);margin-top:4px}.hint.s{display:block}
+.bar{display:flex;justify-content:space-between;align-items:center;font-size:14px;color:var(--mute);margin-top:10px}
+.sc{height:6px;background:var(--line);border-radius:9px;overflow:hidden;flex:1;margin-right:12px}.sc i{display:block;height:100%;background:var(--ing);width:0;transition:width .3s}
+.inf{color:var(--inf);font-weight:700}.ing{color:var(--ing);font-weight:700}
+.sortcard{text-align:center;padding:26px 10px}.sortcard .w{font:800 38px 'Bricolage Grotesque',sans-serif}
+.sortbtns{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+.sortbtns .b{font-size:17px;padding:12px 22px}.bi{background:var(--infb)!important;border-color:var(--inf)!important}.bg{background:var(--ingb)!important;border-color:var(--ing)!important}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0}.chip{border-radius:999px;padding:3px 11px;font-size:14px;font-weight:600}
+.chip.i{background:var(--infb);color:var(--inf)}.chip.g{background:var(--ingb);color:var(--ing);border:0}
+details{border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:0 0 10px;background:var(--card)}summary{cursor:pointer;font-weight:700}
+.grid{display:grid;grid-template-columns:64px repeat(4,1fr);gap:6px;font-size:13px}
+.grid .h{font-weight:700;text-align:center;border-radius:8px;padding:6px 2px;color:#fff}.h.i{background:var(--inf)}.h.g{background:var(--ing)}
+.grid .r{font-weight:700;color:var(--mute);display:flex;align-items:center;font-size:12px}
+.cell{border:1.5px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 2px;font:700 13px Figtree;cursor:pointer;min-height:48px}
+.cell.i.on{background:var(--infb);border-color:var(--inf)}.cell.g.on{background:var(--ingb);border-color:var(--ing)}
+.panel{margin-top:12px;padding:14px;border-radius:14px;background:var(--sunb);min-height:80px}
+.panel b{color:var(--inf)}.tl{display:flex;align-items:center;gap:8px;margin:8px 0;font-size:14px}.tl span{padding:3px 10px;border-radius:8px;background:var(--card)}
+.story{background:var(--bg);border-radius:12px;padding:12px 14px;margin-bottom:10px;line-height:1.9}
+.next{display:flex;justify-content:flex-end;margin-top:8px}
+.big{font:800 44px 'Bricolage Grotesque'}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+<h1>Gerunds & infinitives: <span class="i">complex</span> <span class="g">forms</span></h1>
+<p class="sub">B1+ lesson · about 55 minutes · tap <b>Hint</b> if you are stuck, tap <span class="gl" data-t="переклад тут">dotted words</span> for Ukrainian.</p>
+</header>
+<nav><div class="nv" id="nav"></div></nav>
+<main id="main"></main>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const norm=s=>s.toLowerCase().replace(/[.,!?;:'’"]/g,'').replace(/\s+/g,' ').trim();
+const fmt=s=>s.replace(/\[\[(.+?)\|(.+?)\]\]/g,'<span class="gl" tabindex="0" data-t="$2">$1</span>').replace(/___/g,'<span class="gap">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>');
+const shuf=a=>[...a].sort(()=>Math.random()-.5);
+let score=0,total=0;const fixed={};
+const upd=()=>$('#star').textContent='⭐ '+score;
+document.addEventListener('click',e=>{const g=e.target.closest('.gl');document.querySelectorAll('.gl.s').forEach(x=>x!==g&&x.classList.remove('s'));if(g)g.classList.toggle('s')});
+
+/* ---------- generic exercise engine ---------- */
+function item(it,kind,done){
+ const d=document.createElement('div');d.className='it';let tries=0,fin=false;
+ d.innerHTML=`<p class="q">${fmt(it.q)}</p><div class="a"></div><button class="lnk">💡 Hint</button><div class="hint">${it.h||''}</div><div class="fb"></div>`;
+ const A=$('.a',d),fb=$('.fb',d);
+ $('.lnk',d).onclick=()=>$('.hint',d).classList.toggle('s');
+ const finish=ok=>{fin=true;if(ok&&tries===0){score++;upd()}done(ok&&tries===0)};
+ const ans=Array.isArray(it.a)?it.a:[it.a];
+ if(kind==='mcq'){
+  A.className='a opts';
+  it.o.forEach(t=>{const b=document.createElement('button');b.className='o';b.textContent=t;
+   b.onclick=()=>{if(fin||b.disabled)return;
+    if(ans.includes(t)){b.classList.add('ok');fb.className='fb ok';fb.innerHTML='✓ '+it.w;A.querySelectorAll('.o').forEach(x=>x.disabled=true);finish(true)}
+    else{b.classList.add('no');b.disabled=true;tries++;fb.className='fb no';fb.innerHTML='✗ Not this one. '+(tries>1?'Answer: <b>'+ans[0]+'</b>. '+it.w:'Think about the time of the action, then try again.');if(tries>1){A.querySelectorAll('.o').forEach(x=>x.disabled=true);finish(false)}}}
+   A.append(b)});
+ }else{
+  A.innerHTML='<input type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="answer"> <button class="p">Check</button>';
+  const inp=$('input',A),chk=()=>{if(fin||!inp.value.trim())return;
+   if(ans.some(x=>norm(x)===norm(inp.value))){inp.className='ok';fb.className='fb ok';fb.innerHTML='✓ '+it.w+(ans.length>1?' <i>(also: '+ans.filter(x=>norm(x)!==norm(inp.value)).join(' / ')+')</i>':'');inp.disabled=true;finish(true)}
+   else{tries++;inp.className='no';fb.className='fb no';if(tries>1){fb.innerHTML='✗ Answer: <b>'+ans.join(' / ')+'</b>. '+it.w;inp.disabled=true;finish(false)}else fb.innerHTML='✗ Not quite. Open the hint and try once more.'}};
+  $('.p',A).onclick=chk;inp.addEventListener('keydown',e=>{if(e.key==='Enter')chk()});
+ }
+ return d;
+}
+function exercise(title,ins,items,kind,pre){
+ const c=document.createElement('div');c.className='card';
+ const build=()=>{c.innerHTML=`<h3>${title}</h3><p class="ins">${ins}</p>${pre||''}<div class="list"></div><div class="bar"><div class="sc"><i></i></div><span class="cnt">0/${items.length}</span><button class="lnk rs">Try again ↺</button></div>`;
+  let n=0,ok=0;const L=$('.list',c);
+  items.forEach(it=>L.append(item(it,kind,g=>{n++;if(g)ok++;$('.sc i',c).style.width=n/items.length*100+'%';$('.cnt',c).textContent=ok+' correct / '+n+' of '+items.length+' done';if(n===items.length)$('.cnt',c).textContent+=ok===items.length?' 🎉':' — press ↺ to repeat'})));
+  $('.rs',c).onclick=build};
+ build();return c;
+}
+
+/* ---------- 1. warm-up ---------- */
+const V=[['enjoy','насолоджуватися','g'],['avoid','уникати','g'],['deny','заперечувати (провину)','g'],['mind','заперечувати, мати щось проти','g'],['finish','закінчувати','g'],['suggest','пропонувати','g'],['want','хотіти','i'],['decide','вирішувати','i'],['hope','сподіватися','i'],['refuse','відмовлятися','i'],['manage','вдаватися, зуміти','i'],['promise','обіцяти','i']];
+function warm(el){
+ const c=document.createElement('div');c.className='card';el.append(c);
+ el.insertAdjacentHTML('afterbegin','<p class="meta">⏱ 7 min · Sort each verb: does it take <span class="ing">-ing</span> or <span class="inf">to + infinitive</span>? Say the Ukrainian word first!</p>');
+ let q,i,ok,rounds=0;
+ const go=()=>{q=shuf(V);i=0;ok=0;show()};
+ const show=()=>{
+  if(i>=q.length){rounds++;c.innerHTML=`<div class="sortcard"><div class="big">${ok}/${q.length}</div><p>${ok===q.length?'Perfect! 🎉':'Good work — repetition makes it stick.'} Round ${rounds} finished.</p><button class="p" id="again">Play again (new order) ↺</button></div>
+   <div class="chips"><b>Memory box:</b></div><div class="chips">${V.filter(v=>v[2]==='g').map(v=>`<span class="chip g">${v[0]} + -ing</span>`).join('')}</div><div class="chips">${V.filter(v=>v[2]==='i').map(v=>`<span class="chip i">${v[0]} + to do</span>`).join('')}</div>`;$('#again').onclick=go;return}
+  const v=q[i];
+  c.innerHTML=`<div class="sortcard"><div class="meta">${i+1} / ${q.length}</div><div class="w">${v[0]}</div><button class="lnk" id="tr">🇺🇦 Show translation</button><div id="uk" class="hint" style="font-size:17px">${v[1]}</div>
+  <div class="sortbtns"><button class="b bg" data-k="g">verb + <b>-ing</b><br><small>enjoy doing</small></button><button class="b bi" data-k="i">verb + <b>to do</b><br><small>want to do</small></button></div><div class="fb" id="f"></div></div>`;
+  $('#tr').onclick=()=>$('#uk').classList.add('s');
+  c.querySelectorAll('.sortbtns .b').forEach(b=>b.onclick=()=>{
+   const right=b.dataset.k===v[2];$('#uk').classList.add('s');
+   const eg=v[2]==='g'?`${v[0]} + <span class="ing">-ing</span>`:`${v[0]} + <span class="inf">to + infinitive</span>`;
+   const f=$('#f');f.className='fb '+(right?'ok':'no');f.innerHTML=(right?'✓ ':'✗ ')+eg;
+   if(right){ok++;score++;upd()}
+   c.querySelectorAll('.sortbtns .b').forEach(x=>x.disabled=true);
+   const n=document.createElement('button');n.className='p';n.style.marginTop='12px';n.textContent='Next →';n.onclick=()=>{i++;show()};f.after(n);n.focus()})};
+ go();
+}
+
+/* ---------- 2. simple forms ---------- */
+const MB='<details><summary>Memory box: simple forms</summary><div class="chips"><span class="chip g">enjoy, avoid, deny, mind, finish, suggest, keep, regret → -ing</span><span class="chip i">want, decide, hope, refuse, manage, promise, agree → to do</span></div></details>';
+function simple(el){
+ el.insertAdjacentHTML('afterbegin','<p class="meta">⏱ 8 min · Revise the simple forms before the complex ones.</p>'+MB);
+ el.append(exercise('Exercise 1 · Choose','Pick <span class="inf">to do</span> or <span class="ing">doing</span>.',[
+ {q:'I enjoy ___ English with my teacher.',o:['to learn','learning'],a:'learning',h:'Is “enjoy” on the -ing list?',w:'enjoy + -ing.'},
+ {q:'She decided ___ a new job.',o:['to find','finding'],a:'to find',h:'“decide” is on the infinitive list.',w:'decide + to-infinitive.'},
+ {q:'We avoid ___ out late at night.',o:['to go','going'],a:'going',h:'avoid = уникати.',w:'avoid + -ing.'},
+ {q:'He refused ___ the truth.',o:['to tell','telling'],a:'to tell',h:'refuse = відмовлятися.',w:'refuse + to-infinitive.'},
+ {q:'Do you mind ___ the window?',o:['to open','opening'],a:'opening',h:'mind + …?',w:'mind + -ing.'},
+ {q:'They hope ___ in Spain next year.',o:['to live','living'],a:'to live',h:'hope = сподіватися.',w:'hope + to-infinitive.'},
+ {q:'I suggest ___ a taxi.',o:['to take','taking'],a:'taking',h:'suggest is on the -ing list.',w:'suggest + -ing.'},
+ {q:'She promised ___ me tomorrow.',o:['to call','calling'],a:'to call',h:'promise = обіцяти.',w:'promise + to-infinitive.'}],'mcq'));
+ el.append(exercise('Exercise 2 · Write','Write the verb in the correct simple form.',[
+ {q:'He wants ___ (be) a pilot.',a:'to be',h:'want + …',w:'want + to-infinitive.'},
+ {q:'I can’t stand ___ (wait) in queues.',a:'waiting',h:'can’t stand = терпіти. -ing or to?',w:'can’t stand + -ing.'},
+ {q:'We managed ___ (finish) on time.',a:'to finish',h:'manage = вдаватися.',w:'manage + to-infinitive.'},
+ {q:'She keeps ___ (forget) her keys.',a:'forgetting',h:'keep (on) + …',w:'keep + -ing.'},
+ {q:'He denied ___ (take) the money.',a:'taking',h:'deny is on the -ing list.',w:'deny + -ing (simple gerund).'},
+ {q:'They agreed ___ (help) us.',a:'to help',h:'agree = погоджуватися.',w:'agree + to-infinitive.'}],'type'));
+}
+
+/* ---------- 3. grammar ---------- */
+const CELLS=[
+['Simple','i','(to) do','present or future','I need <b>to talk</b> to John.','Дія зараз або в майбутньому.'],
+['Simple','i','(to) be done','present or future (passive)','He wants <b>to be sent</b> home.','Дію виконують НАД підметом.'],
+['Simple','g','doing','any time','She regretted <b>marrying</b> so young.','Час зрозумілий з контексту.'],
+['Simple','g','being done','any time (passive)','He denied <b>being offered</b> a bribe.','Пасив: being + V3.'],
+['Continuous','i','(to) be doing','in progress now','They seem <b>to be having</b> fun.','Дія триває саме зараз.'],
+['Perfect','i','(to) have done','earlier or completed action','I’m glad <b>to have had</b> the honour of meeting him.','Дія була РАНІШЕ.'],
+['Perfect','i','(to) have been done','earlier, completed (passive)','She claims <b>to have been fired</b> for no reason.','have been + V3: раніше + пасив.'],
+['Perfect','g','having done','earlier or completed action','He’s accused of <b>having robbed</b> a bank.','having + V3: раніше.'],
+['Perfect','g','having been done','earlier, completed (passive)','She did it after <b>having been warned</b>.','having been + V3.'],
+['Perfect continuous','i','(to) have been doing','duration from earlier in the past','They’re thought <b>to have been hiding</b> here.','Тривала дія з минулого до тепер.']];
+const RULES=[
+{t:'1 · Simple or perfect gerund?',b:'Usually <b>no difference</b>: <i>He denied stealing / having stolen the money.</i> The context shows it was earlier.<br>Sometimes there <b>is</b> a difference: <i>He denied <span class="ing">being</span> married</i> (he said: “I’m not married now”) vs. <i>He denied <span class="ing">having been</span> married</i> (“I was never married before”).',q:{q:'He denied ___ married before. (He says: “I was never married.”)',o:['being','having been'],a:'having been',w:'Earlier in the past → having been.'}},
+{t:'2 · Perfect infinitive = earlier action',b:'<i>I’m glad <span class="inf">to work</span> here.</i> = now<br><i>I’m glad <span class="inf">to have worked</span> here.</i> = in the past',q:{q:'“I’m glad to have met you.” You met the person…',o:['now / later','before'],a:'before',w:'to have + V3 = earlier.'}},
+{t:'3 · Continuous & perfect continuous',b:'<span class="inf">to be + -ing</span>: action in progress <b>now</b> — <i>I’m glad to be spending this weekend with you.</i><br><span class="inf">to have been + -ing</span>: duration from the past — <i>They are thought to have been hiding in the mountains.</i>',q:{q:'“She is thought to be living in Brussels.” She lives there…',o:['now','only in the past'],a:'now',w:'to be living = now, in progress.'}},
+{t:'4 · After passive reporting verbs (is said, is thought, is believed)',b:'<i>They are believed <span class="inf">to be</span> lovers.</i> = now<br><i>They are believed <span class="inf">to have been</span> lovers.</i> = in the past',q:{q:'“He is said to have been a spy.” When?',o:['now','in the past'],a:'in the past',w:'to have been = past.'}},
+{t:'5 · would like / hate / rather / prefer',b:'Perfect infinitive = a <b>past</b> wish or regret: <i>I would like <span class="inf">to have seen</span> you once more.</i><br>Careful: <i>She would rather <span class="inf">have been</span> with you</i> — no “to” after rather!',q:{q:'“I’d like to have seen the film.” What does it mean?',o:['I want to see it tomorrow.','I didn’t see it, and now I wish I had.'],a:'I didn’t see it, and now I wish I had.',w:'would like + perfect = unreal past wish.'}},
+{t:'6 · Passive: something is done to the subject',b:'<span class="inf">to be + V3</span> / <span class="ing">being + V3</span>: <i>This place needs to be taken care of. I don’t mind being told what to do.</i><br>Past: <span class="ing">having been + V3</span> — <i>He denied having been offered money.</i>',q:{q:'I don’t mind ___ what to do. (Someone tells me.)',o:['telling','being told'],a:'being told',w:'Someone tells ME → passive: being told.'}}];
+function grammar(el){
+ el.insertAdjacentHTML('afterbegin','<p class="meta">⏱ 10 min · Tap the table, open each rule, answer the quick check.</p>');
+ const c=document.createElement('div');c.className='card';
+ const cols=[['Active','i'],['Passive','i'],['Active','g'],['Passive','g']],rows=['Simple','Continuous','Perfect','Perfect continuous'];
+ let h='<h3>The forms table</h3><p class="ins">Blue = infinitive · green = -ing. Tap a form.</p><div class="grid"><span></span><span class="h i" style="grid-column:span 2">to + verb</span><span class="h g" style="grid-column:span 2">-ing</span><span></span>'+cols.map(x=>`<span class="h ${x[1]}">${x[0]}</span>`).join('');
+ const LAY=[[0,1,2,3],[4,-1,-1,-1],[5,6,7,8],[9,-1,-1,-1]];
+ rows.forEach((r,ri)=>{h+=`<span class="r">${r}</span>`;LAY[ri].forEach((j,ci)=>{h+=j>=0?`<button class="cell ${cols[ci][1]}" data-i="${j}">${CELLS[j][2]}</button>`:'<span></span>'})});
+ h+='</div><div class="panel" id="pn">👆 Tap a form to see when we use it.</div>';
+ c.innerHTML=h;el.append(c);
+ c.querySelectorAll('.cell').forEach(b=>b.onclick=()=>{c.querySelectorAll('.cell').forEach(x=>x.classList.remove('on'));b.classList.add('on');const x=CELLS[b.dataset.i];
+  $('#pn',c).innerHTML=`<div class="tl"><span>past ◀</span><span>● now</span><span>▶ future</span></div><b>${x[2]}</b> — ${x[3]}<br><i>${x[4]}</i><br><small>🇺🇦 ${x[5]}</small>`});
+ const rc=document.createElement('div');
+ RULES.forEach(r=>{const d=document.createElement('details');d.innerHTML=`<summary>${r.t}</summary><p>${r.b}</p><div class="qc"></div>`;$('.qc',d).append(item(r.q,'mcq',()=>{}));rc.append(d)});
+ el.append(rc);
+}
+
+/* ---------- 4. controlled ---------- */
+function ctrl(el){
+ el.insertAdjacentHTML('afterbegin','<p class="meta">⏱ 10 min · Controlled practice: choose, decide, write.</p>');
+ el.append(exercise('Exercise 3 · Choose the form','One answer is correct.',[
+ {q:'I’m glad ___ you last year.',o:['to meet','to have met','meeting'],a:'to have met',h:'“Last year” = earlier.',w:'Earlier action → to have met.'},
+ {q:'Look! They seem ___ fun right now.',o:['to have','to be having','having had'],a:'to be having',h:'“Right now” = in progress.',w:'Continuous infinitive.'},
+ {q:'He denied ___ a bribe. (Someone offered it to him.)',o:['offering','being offered','to be offered'],a:'being offered',h:'deny + -ing. Active or passive?',w:'deny + passive gerund.'},
+ {q:'The boy is ill. He wants ___ home from school.',o:['to send','to be sent','to have sent'],a:'to be sent',h:'Someone sends HIM.',w:'Passive infinitive.'},
+ {q:'They are believed ___ the country last night.',o:['to leave','to have left','leaving'],a:'to have left',h:'“Last night” = past.',w:'Passive reporting verb + past → to have left.'},
+ {q:'He’s accused of ___ a bank two years ago.',o:['to have robbed','having robbed','being robbed'],a:'having robbed',h:'accused of + gerund; earlier action.',w:'Perfect gerund.'},
+ {q:'She did it after ___ by her boss.',o:['having warned','having been warned','being warning'],a:'having been warned',h:'Someone warned HER.',w:'Perfect passive gerund.'},
+ {q:'I would like ___ you at the party, but I was busy.',o:['to see','to have seen','seeing'],a:'to have seen',h:'But I was busy = it didn’t happen.',w:'would like + perfect = past wish.'}],'mcq'));
+ el.append(exercise('Exercise 4 · Time check','What does the form show? Read the sentence carefully.',[
+ {q:'He is said to be rich.',o:['Now / future','Earlier, finished','In progress now','Duration up to now'],a:'Now / future',w:'Simple infinitive = now.'},
+ {q:'He is said to have been rich.',o:['Now / future','Earlier, finished','In progress now','Duration up to now'],a:'Earlier, finished',w:'Perfect infinitive = earlier.'},
+ {q:'She would rather be with you.',o:['Now / future','Earlier, finished','In progress now','Duration up to now'],a:'Now / future',w:'rather + simple = now.'},
+ {q:'She would rather have been with you.',o:['Now / future','Earlier, finished','In progress now','Duration up to now'],a:'Earlier, finished',w:'rather + perfect = past regret.'},
+ {q:'They seem to be having fun.',o:['Now / future','Earlier, finished','In progress now','Duration up to now'],a:'In progress now',w:'to be + -ing.'},
+ {q:'They’re thought to have been hiding here.',o:['Now / future','Earlier, finished','In progress now','Duration up to now'],a:'Duration up to now',h:'Look for “been + -ing”.',w:'Perfect continuous = duration.'}],'mcq'));
+ el.append(exercise('Exercise 5 · Write the form','Use the verb in brackets. Active or passive? Now or earlier?',[
+ {q:'I’m very glad ___ (meet) you yesterday.',a:'to have met',h:'perfect infinitive',w:'to have + V3.'},
+ {q:'They seem ___ (have) a great time at the moment.',a:'to be having',h:'continuous infinitive',w:'to be + -ing.'},
+ {q:'He denied ___ (offer) money before the trial.',a:['having been offered','being offered'],h:'passive gerund, earlier',w:'having been + V3 (being offered is also OK).'},
+ {q:'She is believed ___ (live) in Paris for ten years.',a:'to have been living',h:'duration from the past',w:'perfect continuous infinitive.'},
+ {q:'I would rather ___ (stay) at home last night.',a:'have stayed',h:'No “to” after “would rather”!',w:'would rather + have + V3.'},
+ {q:'The documents need ___ (sign) today.',a:'to be signed',h:'Someone signs THEM.',w:'to be + V3.'}],'type'));
+}
+
+/* ---------- 5. semi-controlled ---------- */
+function semi(el){
+ el.insertAdjacentHTML('afterbegin','<p class="meta">⏱ 10 min · Less help now. Read the context carefully.</p>');
+ el.append(exercise('Exercise 6 · Finish the second sentence','Same meaning. Write 2–3 words.',[
+ {q:'I’m sorry that I missed your call. → I’m sorry ___ your call.',a:'to have missed',h:'Missing happened earlier.',w:'to have + V3.'},
+ {q:'People say he is working in London now. → He is said ___ in London now.',a:'to be working',h:'now + in progress',w:'continuous infinitive.'},
+ {q:'She admits that she lied to us. → She admits ___ to us.',a:['having lied','lying'],h:'admit + gerund',w:'admit + (having) lied.'},
+ {q:'I don’t like it when people tell me what to do. → I don’t like ___ what to do.',a:'being told',h:'People tell ME.',w:'passive gerund.'},
+ {q:'It’s a pity I didn’t see the film. → I’d like ___ the film.',a:'to have seen',h:'past wish',w:'would like + perfect.'},
+ {q:'They think the [[thieves|злодії]] hid in the forest for a week. → The thieves are thought ___ in the forest for a week.',a:'to have been hiding',h:'duration + passive reporting verb',w:'perfect continuous.'}],'type'));
+ el.append(exercise('Exercise 7 · Read & choose','Tap dotted words for translation. Use the whole story as context.',[
+ {q:'(1) The [[thief|злодій]] is thought ___ the building through a window.',o:['to enter','to have entered','entering'],a:'to have entered',h:'It happened at night, before today.',w:'Past event → to have entered.'},
+ {q:'(2) The [[guard|охоронець]] is believed ___ asleep at that moment.',o:['to be','to have been','being'],a:'to have been',h:'“At that moment” = past.',w:'to have been.'},
+ {q:'(3) He admitted ___ the [[alarm|сигналізація]] off.',o:['switch','to have switched','having switched'],a:'having switched',h:'admit + gerund',w:'admit + having + V3.'},
+ {q:'(4) He denied ___ any money for his [[silence|мовчання]].',o:['having been offered','having offered','to be offered'],a:'having been offered',h:'Money was offered TO him.',w:'Perfect passive gerund.'},
+ {q:'(5) Now he seems ___ very [[nervous|нервовий]] — he can’t sit still!',o:['to feel','to be feeling','to have felt'],a:'to be feeling',h:'“Now” + “can’t sit still” = in progress.',w:'Continuous infinitive.'},
+ {q:'(6) “I would like ___ more [[careful|обережний]],” he said.',o:['to be','to have been','being'],a:'to have been',h:'He regrets the past.',w:'would like + perfect.'}],'mcq',
+ '<div class="story"><b>The museum thief.</b> Last week, a famous painting was [[stolen|вкрадена]] from a small museum in Lviv. (1) … Police asked the guard questions. (2) … Later, (3) … but (4) … Today (5) … (6) …</div>'));
+ el.append(exercise('Exercise 8 · Find and fix the mistake','The <b>bold</b> part is wrong. Write the correct form.',[
+ {q:'He is believed <b>to be</b> a spy twenty years ago.',a:'to have been',h:'“Twenty years ago” = past.',w:'to have been.'},
+ {q:'I would like <b>to see</b> you yesterday, but I was ill.',a:'to have seen',h:'Past wish.',w:'would like + perfect.'},
+ {q:'She denied <b>to steal</b> the money.',a:['stealing','having stolen'],h:'deny + …',w:'deny + gerund.'},
+ {q:'They seem <b>to have had</b> fun right now.',a:'to be having',h:'“Right now”',w:'Continuous infinitive.'},
+ {q:'The cat needs <b>to feed</b>.',a:'to be fed',h:'Someone feeds the cat.',w:'Passive infinitive.'}],'type'));
+}
+
+/* ---------- 6. speaking ---------- */
+const SQ=[
+['What are you glad to have done this year? Why?','I’m glad to have …','to have done'],
+['Is there anything you regret having done or not having done?','I regret having … / I regret not having …','having done'],
+['What are you glad to be doing at the moment in your life?','I’m glad to be …ing','to be doing'],
+['Where would you rather have been last weekend? Why?','I would rather have been …','would rather have done'],
+['Who is believed to have been a great person in the history of Ukraine?','… is believed to have been …','to have been'],
+['What do you hate being told to do?','I hate being told to …','being done'],
+['What would you like to have experienced in the past, but couldn’t?','I would like to have …','would like to have done'],
+['Do you know someone who is said to be living or working abroad now?','… is said to be …ing','to be doing']];
+function speak(el){
+ el.insertAdjacentHTML('afterbegin','<p class="meta">⏱ 10 min · Answer aloud in 3–4 sentences. Use the target form and add your own real details. Then write one sentence below.</p>');
+ const c=document.createElement('div');c.className='card';el.append(c);let k=0;
+ const re=/\b(to have (been )?\w+|having (been )?\w+|being \w+|to be \w+|rather have \w+)/i;
+ const show=()=>{const s=SQ[k];
+  c.innerHTML=`<h3>Question ${k+1} / ${SQ.length}</h3><p class="q" style="font-size:20px">${s[0]}</p><p>🎯 Target: <span class="chip i">${s[2]}</span></p><p class="ins">Starter: <i>${s[1]}</i></p>
+  <textarea placeholder="Write your best sentence here after speaking…"></textarea><div class="sortbtns" style="justify-content:flex-start"><button class="p" id="ck">Check my sentence</button><button class="b" id="pv">← Back</button><button class="b" id="nx">Next question →</button><button class="b" id="rn">🎲 Random</button></div><div class="fb"></div>
+  <p class="hint s">Partner task: ask 2 follow-up questions (<i>Why? When? How did you feel?</i>).</p>`;
+  const fb=$('.fb',c);
+  $('#ck').onclick=()=>{const t=$('textarea',c).value;const m=t.match(re);fb.className='fb '+(m?'ok':'no');fb.innerHTML=m?`✓ I found: <b>${m[0]}</b>. Is the time correct? (now / earlier)`:'✗ I can’t see the target form. Try again with: <i>'+s[1]+'</i>'; if(m&&!c.dataset['d'+k]){c.dataset['d'+k]=1;score++;upd()}};
+  $('#nx').onclick=()=>{k=(k+1)%SQ.length;show()};$('#pv').onclick=()=>{k=(k+SQ.length-1)%SQ.length;show()};$('#rn').onclick=()=>{k=Math.floor(Math.random()*SQ.length);show()}};
+ show();
+ const f=document.createElement('div');f.className='card';f.innerHTML='<h3>Self-check</h3><p class="ins">Tick what you can do now.</p>'+['I know when to use a perfect infinitive','I can use being + V3 and having been + V3','I remember: would rather + have + V3 (no “to”)','I can read a sentence and find the time of the action'].map(t=>`<label style="display:block;margin:6px 0"><input type="checkbox"> ${t}</label>`).join('')+'<p><b id="tot"></b></p>';
+ el.append(f);const tick=()=>$('#tot',f).textContent=`Your total: ⭐ ${score}`;f.addEventListener('change',tick);tick();
+}
+
+/* ---------- shell ---------- */
+const STEPS=[['Warm-up',warm],['Simple forms',simple],['Grammar',grammar],['Controlled',ctrl],['Semi-controlled',semi],['Speaking',speak]];
+const nav=$('#nav'),main=$('#main');
+STEPS.forEach(([n,f],i)=>{
+ const b=document.createElement('button');b.textContent=(i+1)+'. '+n;nav.append(b);
+ const s=document.createElement('section');s.dataset.i=i;main.append(s);
+ const h=document.createElement('h2');h.textContent=n;h.style.margin='4px 0 4px';s.append(h);
+ f(s);
+ if(i<STEPS.length-1){const nx=document.createElement('div');nx.className='next';nx.innerHTML='<button class="p">Next: '+STEPS[i+1][0]+' →</button>';nx.onclick=()=>go(i+1);s.append(nx)}
+ b.onclick=()=>go(i);
+});
+const st=document.createElement('span');st.className='star';st.id='star';st.textContent='⭐ 0';nav.append(st);
+function go(i){nav.querySelectorAll('button').forEach((b,j)=>{b.classList.toggle('on',j===i);if(j<i)b.classList.add('done')});main.querySelectorAll('section').forEach((s,j)=>s.classList.toggle('on',j===i));scrollTo({top:0})}
+go(0);
+</script>
+</body>
+</html>
